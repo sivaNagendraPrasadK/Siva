@@ -1,0 +1,21 @@
+package com.thrymr.hotel.management;
+
+import org.modelmapper.ModelMapper;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+
+@SpringBootApplication
+public class Application {
+
+	@Bean
+	public ModelMapper modelMapper(){
+		return new ModelMapper();
+	}
+	public static void main(String[] args) {
+		SpringApplication.run(Application.class, args);
+	}
+
+
+	// ssh -R 80:localhost:8282 nokey@localhost.run
+}
