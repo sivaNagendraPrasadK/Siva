@@ -65,4 +65,6 @@ public interface HotelService {
 
     ApiResponse UpdateMenuItem(MenuItemDto menuItemDto, Long hId);
 
+    public List<HotelDto> findHotelByMenuItemListName(String menuItem);
+
 }

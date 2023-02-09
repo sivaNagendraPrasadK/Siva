@@ -171,4 +171,9 @@ public class HotelController {
     public MenuItemDto updateMenuItemWithId(@RequestBody MenuItemDto menuItemDto,Long hId){
         return menuItemService.updateMenuItemWithId(menuItemDto, hId);
     }*/
+
+    @GetMapping(path = "/getHotelByItemName/{menuItem}")
+    public List<HotelDto> findHotelByMenuItemListName(@PathVariable String menuItem){
+        return hotelService.findHotelByMenuItemListName(menuItem);
+    }
 }

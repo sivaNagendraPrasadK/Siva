@@ -234,7 +234,7 @@ public class HotelServiceImplementation implements HotelService {
     public List<HotelDto> findAllByNameOrder(String name){     // this is for only name
         List<Hotel> hotels = new ArrayList<>();
         if(name.equalsIgnoreCase("Asc")){
-            hotels = hotelRepository.findAllByOrderByNameAsc();
+            hotels = hotelRepository.get();
         } else if (name.equalsIgnoreCase("Desc")) {
             hotels=hotelRepository.findAllByOrderByNameDesc();
         }
@@ -400,6 +400,10 @@ public class HotelServiceImplementation implements HotelService {
     }
 
 
+    public List<HotelDto> findHotelByMenuItemListName(String menuItem) {
+        List<Hotel> hotelList = hotelRepository.findNameByMenuItemListName(menuItem);
+        return hotelList.stream().map(hotel -> modelMapper.map(hotel,HotelDto.class)).collect(Collectors.toList());
+    }
 
 }
 
